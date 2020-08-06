@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <ItemGroup>
+        <ProjectReference Include="..\src\Function.fsproj" />
+        <ProjectReference Include="..\..\root.fsproj" />
+    </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FSharp.Data" Version="3.3.3" />
+    <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="3.1.6" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.6.1" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Fixtures.fs"></Compile>
+    <Compile Include="HttpFunc.fs"></Compile>
+    <Compile Include="FunctionHandler.Tests.fs"></Compile>
+  </ItemGroup>
+</Project>

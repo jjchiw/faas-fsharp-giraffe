@@ -1,0 +1,5 @@
+language: fsharp
+fprocess: dotnet ./root.dll
+copy:
+  - ./src
+  - ./tests
