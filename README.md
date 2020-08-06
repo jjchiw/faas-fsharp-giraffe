@@ -10,5 +10,5 @@
 
 ```shell
 faas-cli template pull https://github.com/jjchiw/faas-fsharp-giraffe
-faas-cli new myfunction --lang fsharp-of-watchdog
+faas-cli new myfunction --lang fsharp-giraffe
 ```
