@@ -1,4 +1,4 @@
-language: fsharp
+language: fsharp-of-watchdog
 fprocess: dotnet ./root.dll
 copy:
   - ./src
