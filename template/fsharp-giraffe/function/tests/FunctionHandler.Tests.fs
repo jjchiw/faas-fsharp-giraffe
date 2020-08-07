@@ -5,30 +5,26 @@ open System.Net
 open System.Net.Http
 open System.Text
 open Microsoft.AspNetCore.TestHost
-open Newtonsoft.Json
 open Microsoft.AspNetCore.Builder
 open Microsoft.AspNetCore.Hosting
 open Microsoft.Extensions.DependencyInjection
 open System
 open System.IO
-open FunctionServer
 open HttpFunc
 open Fixtures
 open FSharp.Control.Tasks.V2.ContextInsensitive
+open Function
 
 let createHost () =
     WebHostBuilder().UseContentRoot(Directory.GetCurrentDirectory()).UseEnvironment("Test")
-        .Configure(Action<IApplicationBuilder> FunctionServer.configureApp)
-        .ConfigureServices(Action<IServiceCollection> FunctionServer.configureServices)
+        .Configure(Action<IApplicationBuilder> configureApp)
+        .ConfigureServices(Action<IServiceCollection> configureServices)
 
 [<Fact>]
 let ``POST / should respond hello phrase`` () =
     task {
         use server = new TestServer(createHost ())
         use client = server.CreateClient()
-
-        // use content =
-        //     new StringContent(JsonConvert.SerializeObject(getPerson), Encoding.UTF8, "application/json")
 
         use content =
             new StringContent(serializeObject (getPerson), Encoding.UTF8, "application/json")

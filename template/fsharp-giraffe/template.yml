@@ -1,5 +1,5 @@
 language: fsharp
-fprocess: dotnet ./root.dll
+fprocess: fsharp-giraffe
 copy:
   - ./src
   - ./tests

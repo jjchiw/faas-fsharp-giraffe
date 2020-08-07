@@ -1,11 +1,13 @@
 module Function
 
 open FSharp.Data
+open Microsoft.AspNetCore.Builder
 open Microsoft.AspNetCore.Http
 open Giraffe
 open System.IO
 open FSharp.Control.Tasks.V2.ContextInsensitive
-
+open Microsoft.Extensions.DependencyInjection
+    
 type RequestParameters = JsonProvider<"""{"name": "John Doe", "age": 31}""">
 
 let Post (next: HttpFunc) (ctx: HttpContext) =
@@ -21,11 +23,7 @@ let Post (next: HttpFunc) (ctx: HttpContext) =
     }
 
 let NotHandled (next: HttpFunc) (ctx: HttpContext) =
-    // clearResponse
-    // >=> setStatusCode 500
-    // >=>
     setStatusCode HttpStatusCodes.MethodNotAllowed next ctx
-// text "Not Handled" next ctx
 
 let Handler (next: HttpFunc) (ctx: HttpContext) =
     match ctx.Request.Method with
@@ -34,3 +32,17 @@ let Handler (next: HttpFunc) (ctx: HttpContext) =
     | "PUT" -> NotHandled next ctx
     | "DELETE" -> NotHandled next ctx
     | _ -> NotHandled next ctx
+
+let routes : HttpHandler =
+    choose [ GET >=> route "/" >=> Handler
+             POST >=> route "/" >=> Handler
+             PUT >=> route "/" >=> Handler
+             DELETE >=> route "/" >=> Handler ]
+    
+let configureApp (app: IApplicationBuilder) =
+    // Add Giraffe to the ASP.NET Core pipeline
+    app.UseGiraffe routes
+
+let configureServices (services: IServiceCollection) =
+    // Add Giraffe dependencies
+    services.AddGiraffe() |> ignore
