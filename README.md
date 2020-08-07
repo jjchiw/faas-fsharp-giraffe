@@ -97,7 +97,7 @@ Other reference:
 
 -   [Giraffe](https://github.com/giraffe-fsharp/Giraffe)
 
-## Example usage - node10-express-service
+## Example usage - giraffe
 
 This template provides fsharp (dotnetcore 3.1) (LTS) and full access to [giraffe](https://github.com/giraffe-fsharp/Giraffe) [aspnetcore](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-3.1) for building microservices for [OpenFaaS](https://www.openfaas.com), Docker, Knative and Cloud Run.
 
