@@ -20,6 +20,6 @@
   <ItemGroup>
     <Content Include="appsettings.json" />
     <Content Include="appsettings.Production.json" />
-    <Content Include="appSettings.Test.json" />
+    <Content Include="appsettings.Test.json" />
   </ItemGroup>
 </Project>
