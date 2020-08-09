@@ -11,6 +11,7 @@ open Function
 let main _ =
     Host.CreateDefaultBuilder()
         .ConfigureWebHostDefaults(fun webHostBuilder ->
-        webHostBuilder.Configure(configureApp).ConfigureServices(configureServices)
+        webHostBuilder.ConfigureAppConfiguration(configureAppConfiguration).Configure(configureApp)
+                      .ConfigureServices(configureServices)
         |> ignore).Build().Run()
     0

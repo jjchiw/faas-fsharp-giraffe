@@ -9,9 +9,17 @@
   <ItemGroup>
     <PackageReference Include="FSharp.Data" Version="3.3.3" />
     <PackageReference Include="Giraffe" Version="4.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="3.1.6" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.6" />
   </ItemGroup>
 
   <ItemGroup>
     <Compile Include="FunctionHandler.fs"></Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appsettings.json" />
+    <Content Include="appsettings.Production.json" />
+    <Content Include="appSettings.Test.json" />
   </ItemGroup>
 </Project>

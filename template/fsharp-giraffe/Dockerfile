@@ -20,7 +20,7 @@ RUN dotnet restore ./root.fsproj
 
 COPY .  .
 
-RUN dotnet test ./function/tests/FunctionTests.fsproj
+RUN ASPNETCORE_ENVIRONMENT=Test && dotnet test ./function/tests/FunctionTests.fsproj
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 as builder
 
@@ -60,6 +60,7 @@ ENV cgi_headers="true"
 ENV mode="http"
 ENV ASPNETCORE_URLS=http://*:5000
 ENV upstream_url="http://localhost:5000"
+RUN ASPNETCORE_ENVIRONMENT=Production
 EXPOSE 8080
 
 HEALTHCHECK --interval=3s CMD [ -e /tmp/.lock ] || exit 1

@@ -11,6 +11,12 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FunctionTests", "function\t
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "root", "root.fsproj", "{7AD34839-41F1-4CDF-8C5D-469FD187E630}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "home", "home", "{F4EC8DFA-FBD8-4466-BA9A-DCDA093DD1D2}"
+ProjectSection(SolutionItems) = preProject
+	Dockerfile = Dockerfile
+	template.yml = template.yml
+EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
