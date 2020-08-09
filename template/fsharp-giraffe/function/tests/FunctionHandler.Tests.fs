@@ -17,6 +17,7 @@ open Function
 
 let createHost () =
     WebHostBuilder().UseContentRoot(Directory.GetCurrentDirectory()).UseEnvironment("Test")
+        .ConfigureAppConfiguration(configureAppConfiguration)
         .Configure(Action<IApplicationBuilder> configureApp)
         .ConfigureServices(Action<IServiceCollection> configureServices)
 

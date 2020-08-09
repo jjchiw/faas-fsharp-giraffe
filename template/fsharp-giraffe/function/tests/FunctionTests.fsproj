@@ -25,5 +25,8 @@
     <Compile Include="Fixtures.fs"></Compile>
     <Compile Include="HttpFunc.fs"></Compile>
     <Compile Include="FunctionHandler.Tests.fs"></Compile>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 </Project>

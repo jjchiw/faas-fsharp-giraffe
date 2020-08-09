@@ -1,5 +1,6 @@
 module Function
 
+open System
 open FSharp.Data
 open Microsoft.AspNetCore.Builder
 open Microsoft.AspNetCore.Http
@@ -42,8 +43,10 @@ let routes: HttpHandler =
              DELETE >=> route "/" >=> Handler ]
 
 let configureAppConfiguration (context: WebHostBuilderContext) (config: IConfigurationBuilder) =
+    let environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")
+    let environment' =  if String.IsNullOrEmpty(environment) then "Production" else environment
     config.AddJsonFile("appsettings.json", false, true)
-          .AddJsonFile(sprintf "appsettings.%s.json" context.HostingEnvironment.EnvironmentName, true)
+          .AddJsonFile(sprintf "appsettings.%s.json" environment', true)
           .AddEnvironmentVariables()
     |> ignore
 
