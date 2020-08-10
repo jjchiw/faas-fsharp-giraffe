@@ -20,7 +20,8 @@ RUN dotnet restore ./root.fsproj
 
 COPY .  .
 
-RUN ASPNETCORE_ENVIRONMENT=Test && dotnet test ./function/tests/FunctionTests.fsproj
+ENV ASPNETCORE_ENVIRONMENT Test
+RUN dotnet test ./function/tests/FunctionTests.fsproj
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 as builder
 
