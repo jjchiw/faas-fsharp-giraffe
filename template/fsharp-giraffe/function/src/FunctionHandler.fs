@@ -6,7 +6,7 @@ open Microsoft.AspNetCore.Builder
 open Microsoft.AspNetCore.Http
 open Giraffe
 open System.IO
-open FSharp.Control.Tasks.V2.ContextInsensitive
+open FSharp.Control.TaskBuilder
 open Microsoft.Extensions.DependencyInjection
 open Microsoft.Extensions.Configuration
 open Microsoft.AspNetCore.Hosting
