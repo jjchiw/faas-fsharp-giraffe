@@ -1,15 +1,15 @@
-# OpenFaaS FSharp (dotnetcore 3.1) (LTS) and Giraffe template
+# OpenFaaS FSharp (dotnet 7) and Giraffe template
 
 This template provides additional context and control over the HTTP response from your function.
 
 ## Supported platforms
 
--   x86_64
+-   x86_64, ARM_64
 
 ## Trying the template
 
 ```
-faas-cli template pull https://github.com/jjchiw/faas-fsharp-giraffe
+faas-cli template pull https://github.com/houstonhaynes/faas-fsharp-giraffe
 faas-cli new myfunction --lang fsharp-giraffe
 ```
 

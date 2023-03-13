@@ -4,7 +4,7 @@
     </ItemGroup>
 
     <PropertyGroup>
-        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <TargetFramework>net7.0</TargetFramework>
         <EnableDefaultContentItems>false</EnableDefaultContentItems>
         <RunWorkingDirectory>$(MSBuildThisFileDirectory)</RunWorkingDirectory>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
@@ -16,7 +16,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Giraffe" Version="4.1.0" />
+      <PackageReference Include="Giraffe" Version="6.0.0" />
+      <PackageReference Update="FSharp.Core" Version="7.0.200" />
     </ItemGroup>
 <!--
     <PropertyGroup>

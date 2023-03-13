@@ -12,7 +12,7 @@ open System
 open System.IO
 open HttpFunc
 open Fixtures
-open FSharp.Control.Tasks.V2.ContextInsensitive
+open FSharp.Control.TaskBuilder
 open Function
 
 let createHost () =
