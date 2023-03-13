@@ -9,7 +9,7 @@ This template provides additional context and control over the HTTP response fro
 ## Trying the template
 
 ```
-faas-cli template pull https://github.com/jjchiw/faas-fsharp-giraffe
+faas-cli template pull https://github.com/houstonhaynes/faas-fsharp-giraffe
 faas-cli new myfunction --lang fsharp-giraffe
 ```
 
